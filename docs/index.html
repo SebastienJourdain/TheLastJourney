@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Game Name</title>
+    <meta charset="UTF-8">
+    <script src="https://cjrtnc.leaningtech.com/3.0/cj3loader.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #2c3e50;
+            color: white;
+        }
+        #game-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        #loading {
+            padding: 40px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <h1>Your Game Name</h1>
+        <div id="loading">Loading game... Please wait.</div>
+    </div>
+
+    <script>
+        (async function() {
+            // Initialize CheerpJ
+            await cheerpjInit();
+            
+            // Hide loading message
+            document.getElementById('loading').style.display = 'none';
+            
+            // Run your JAR file
+            // Replace 'YourMainClass' with your actual main class
+            await cheerpjRunJar("/app/game.jar");
+        })();
+    </script>
+</body>
+</html>
+```
+
+### 3. Configure Your JAR
+
+Make sure your JAR is properly built with a manifest that specifies the main class:
+```
+Main-Class: com.yourgame.MainClass
